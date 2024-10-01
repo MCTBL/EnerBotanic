@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.MCTBL.botengre.core;
 
 import java.io.File;
 
