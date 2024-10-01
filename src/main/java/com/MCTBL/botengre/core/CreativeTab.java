@@ -15,7 +15,7 @@ public final class CreativeTab extends CreativeTabs {
     public static CreativeTab instance = null;
 
     public CreativeTab() {
-        super("botanicenergisticsre");
+        super("botanicergisticsreborn");
     }
 
     static void init() {
