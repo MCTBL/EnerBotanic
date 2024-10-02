@@ -1,9 +1,10 @@
 package com.MCTBL.botengre.core;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.MCTBL.botengre.blocks.AllBlocks;
 
 /*
  * Author : MCTBL
@@ -24,12 +25,12 @@ public final class CreativeTab extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return Item.getItemFromBlock(Blocks.crafting_table);
+        return Item.getItemFromBlock(AllBlocks.SPARKBINDINGPOINT.getBlock());
     }
 
     @Override
     public ItemStack getIconItemStack() {
-        return new ItemStack(Blocks.crafting_table);
+        return new ItemStack(AllBlocks.SPARKBINDINGPOINT.getBlock());
     }
 
 }

@@ -12,12 +12,23 @@ import com.MCTBL.botengre.core.CreativeTab;
 
 public class BaseBlock extends Block {
 
-    private BaseBlock() {
-        super(Material.iron);
+    public BaseBlock(final Material mat) {
+        super(mat);
+
+        if (mat == Material.glass) {
+            this.setStepSound(Block.soundTypeGlass);
+        } else if (mat == Material.rock) {
+            this.setStepSound(Block.soundTypeStone);
+        } else if (mat == Material.wood) {
+            this.setStepSound(Block.soundTypeWood);
+        } else {
+            this.setStepSound(Block.soundTypeMetal);
+        }
+
     }
 
-    public BaseBlock getNewBlock() {
-        return new BaseBlock();
+    public BaseBlock() {
+        this(Material.iron);
     }
 
     public BaseBlock setHarvestLevel(final int level) {
@@ -27,12 +38,6 @@ public class BaseBlock extends Block {
 
     public BaseBlock addToCreativeTab() {
         this.setCreativeTab(CreativeTab.instance);
-        return this;
-    }
-
-    public BaseBlock setBlockNameAndTextureName(final String blockName, final String textureName) {
-        this.setBlockName(blockName);
-        this.setBlockTextureName(textureName);
         return this;
     }
 

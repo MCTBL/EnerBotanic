@@ -31,6 +31,8 @@ public class BotEngRe {
         proxy.preInit(event);
 
         CreativeTab.init();
+
+        proxy.registerBlocks();
     }
 
     @Mod.EventHandler

@@ -1,5 +1,7 @@
 package com.MCTBL.botengre.core;
 
+import com.MCTBL.botengre.blocks.AllBlocks;
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -24,4 +26,8 @@ public class CommonProxy {
 
     // register server commands in this event handler (Remove if not needed)
     public void serverStarting(FMLServerStartingEvent event) {}
+
+    public void registerBlocks() {
+        AllBlocks.VALUES.forEach(block -> block.registerBlock());
+    }
 }
