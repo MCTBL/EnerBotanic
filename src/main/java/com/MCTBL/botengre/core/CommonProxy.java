@@ -1,6 +1,7 @@
 package com.MCTBL.botengre.core;
 
 import com.MCTBL.botengre.blocks.AllBlocks;
+import com.MCTBL.botengre.tile.AllTileEntitys;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -28,6 +29,10 @@ public class CommonProxy {
     public void serverStarting(FMLServerStartingEvent event) {}
 
     public void registerBlocks() {
-        AllBlocks.VALUES.forEach(block -> block.registerBlock());
+        AllBlocks.VALUES.forEach(AllBlocks::registerBlock);
+    }
+
+    public void registerTiles() {
+        AllTileEntitys.VALUES.forEach(AllTileEntitys::registerTE);
     }
 }

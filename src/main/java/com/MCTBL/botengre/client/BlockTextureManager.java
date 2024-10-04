@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public enum BlockTextureManager {
 
-    SPARKBINDINGPOINT(new String[] { "sparkbindingpoint" });
+    BLOCKSPARKBINDINGPOINT(new String[] { "sparkbindingpoint" });
 
     private String[] textureNames;
 

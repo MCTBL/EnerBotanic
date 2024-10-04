@@ -1,6 +1,7 @@
 package com.MCTBL.botengre.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 
 import com.MCTBL.botengre.core.CreativeTab;
@@ -10,9 +11,9 @@ import com.MCTBL.botengre.core.CreativeTab;
  * Time : 2024-10-01 21:53:57
  */
 
-public class BaseBlock extends Block {
+public abstract class BaseBlock extends BlockContainer {
 
-    public BaseBlock(final Material mat) {
+    protected BaseBlock(final Material mat) {
         super(mat);
 
         if (mat == Material.glass) {
@@ -27,7 +28,7 @@ public class BaseBlock extends Block {
 
     }
 
-    public BaseBlock() {
+    protected BaseBlock() {
         this(Material.iron);
     }
 

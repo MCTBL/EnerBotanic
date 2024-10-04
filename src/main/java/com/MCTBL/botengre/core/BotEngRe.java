@@ -14,7 +14,8 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     modid = BotEngRe.MODID,
     version = BotEngRe.VERSION,
     name = "Botanic Energistics Reborn",
-    acceptedMinecraftVersions = "[1.7.10]")
+    acceptedMinecraftVersions = "[1.7.10]",
+    dependencies = "required-after:appliedenergistics2@[rv3-beta-214,);required-after:Botania")
 public class BotEngRe {
 
     public static final String MODID = "botanicergisticsreborn";
@@ -33,6 +34,7 @@ public class BotEngRe {
         CreativeTab.init();
 
         proxy.registerBlocks();
+        proxy.registerTiles();
     }
 
     @Mod.EventHandler

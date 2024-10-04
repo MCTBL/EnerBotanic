@@ -18,7 +18,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllBlocks {
 
-    SPARKBINDINGPOINT(BotEngStrings.SPARKBINDINGPOINT, new SparkBindingPoint());
+    BLOCKSPARKBINDINGPOINT(BotEngStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint());
 
     public static final List<AllBlocks> VALUES = Collections.unmodifiableList(Arrays.asList(AllBlocks.values()));
 

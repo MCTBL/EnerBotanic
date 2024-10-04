@@ -25,12 +25,12 @@ public final class CreativeTab extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return Item.getItemFromBlock(AllBlocks.SPARKBINDINGPOINT.getBlock());
+        return Item.getItemFromBlock(AllBlocks.BLOCKSPARKBINDINGPOINT.getBlock());
     }
 
     @Override
     public ItemStack getIconItemStack() {
-        return new ItemStack(AllBlocks.SPARKBINDINGPOINT.getBlock());
+        return new ItemStack(AllBlocks.BLOCKSPARKBINDINGPOINT.getBlock());
     }
 
 }

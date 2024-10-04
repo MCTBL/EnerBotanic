@@ -9,7 +9,7 @@ import net.minecraft.util.StatCollector;
 
 public enum BotEngStrings {
 
-    SPARKBINDINGPOINT("block.sparkbindingpoint", true);
+    BLOCKSPARKBINDINGPOINT("block.sparkbindingpoint", true);
 
     private String unlocalized;
     private boolean needName;
