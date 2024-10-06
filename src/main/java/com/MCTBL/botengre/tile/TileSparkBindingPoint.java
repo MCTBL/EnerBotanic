@@ -68,10 +68,9 @@ public class TileSparkBindingPoint extends AENetworkTile implements ISparkAttach
 
     @Override
     public void recieveMana(int mana) {
-        if (!this.isFull()) {
-            this.mana += mana;
-            this.markDirty();
-        }
+        this.mana = Math.max(0, Math.min(getCurrentMana() + mana, MAX_MANA));
+        worldObj.func_147453_f(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord));
+        this.markDirty();
     }
 
     @Override
@@ -96,7 +95,7 @@ public class TileSparkBindingPoint extends AENetworkTile implements ISparkAttach
 
     @Override
     public int getAvailableSpaceForMana() {
-        return MAX_MANA - this.mana;
+        return Math.max(0, MAX_MANA - getCurrentMana());
     }
 
     @Override
@@ -114,7 +113,7 @@ public class TileSparkBindingPoint extends AENetworkTile implements ISparkAttach
 
     @Override
     public boolean areIncomingTranfersDone() {
-        return true;
+        return false;
     }
 
 }

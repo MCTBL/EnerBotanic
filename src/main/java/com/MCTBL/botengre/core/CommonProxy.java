@@ -1,7 +1,7 @@
 package com.MCTBL.botengre.core;
 
-import com.MCTBL.botengre.blocks.AllBlocks;
-import com.MCTBL.botengre.tile.AllTileEntitys;
+import com.MCTBL.botengre.core.staticenum.AllBlocks;
+import com.MCTBL.botengre.core.staticenum.AllTileEntitys;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;

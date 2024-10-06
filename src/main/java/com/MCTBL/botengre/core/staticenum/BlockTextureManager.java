@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.client;
+package com.MCTBL.botengre.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,7 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public enum BlockTextureManager {
 
-    BLOCKSPARKBINDINGPOINT(new String[] { "sparkbindingpoint" });
+    BLOCKSPARKBINDINGPOINT(new String[] { "sparkbindingpoint" }),
+    BLOCKMEPOOL(new String[] { "blockmepool1", "blockmepool2" });
 
     private String[] textureNames;
 

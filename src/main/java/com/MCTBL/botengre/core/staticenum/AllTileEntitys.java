@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.tile;
+package com.MCTBL.botengre.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +7,8 @@ import java.util.List;
 import net.minecraft.tileentity.TileEntity;
 
 import com.MCTBL.botengre.core.BotEngRe;
+import com.MCTBL.botengre.tile.TileMEPool;
+import com.MCTBL.botengre.tile.TileSparkBindingPoint;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -17,7 +19,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllTileEntitys {
 
-    TILESPARKBINDINGPOINT("TileSparkBindingPoint", TileSparkBindingPoint.class);
+    TILESPARKBINDINGPOINT("TileSparkBindingPoint", TileSparkBindingPoint.class),
+    TILEMEPOOL("TileMEPool", TileMEPool.class);
 
     public static final List<AllTileEntitys> VALUES = Collections
         .unmodifiableList(Arrays.asList(AllTileEntitys.values()));

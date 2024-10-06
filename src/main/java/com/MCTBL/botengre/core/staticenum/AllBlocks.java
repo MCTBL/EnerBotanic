@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.blocks;
+package com.MCTBL.botengre.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,7 +7,9 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 
-import com.MCTBL.botengre.core.BotEngStrings;
+import com.MCTBL.botengre.blocks.BlockMEPool;
+import com.MCTBL.botengre.blocks.BlockSparkBindingPoint;
+import com.MCTBL.botengre.core.CreativeTab;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -18,7 +20,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllBlocks {
 
-    BLOCKSPARKBINDINGPOINT(BotEngStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint());
+    BLOCKSPARKBINDINGPOINT(BotEngStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint()),
+    BLOCKMEPOOL(BotEngStrings.BLOCKMEPOOL, new BlockMEPool());
 
     public static final List<AllBlocks> VALUES = Collections.unmodifiableList(Arrays.asList(AllBlocks.values()));
 
@@ -44,6 +47,7 @@ public enum AllBlocks {
     }
 
     public void registerBlock() {
+        this.block.setCreativeTab(CreativeTab.instance);
         GameRegistry.registerBlock(this.block, this.itemclass, this.block.getUnlocalizedName());
     }
 

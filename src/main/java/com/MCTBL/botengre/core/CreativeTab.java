@@ -4,7 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import com.MCTBL.botengre.blocks.AllBlocks;
+import com.MCTBL.botengre.core.staticenum.AllBlocks;
 
 /*
  * Author : MCTBL

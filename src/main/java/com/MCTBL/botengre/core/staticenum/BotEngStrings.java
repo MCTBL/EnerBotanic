@@ -1,6 +1,8 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.botengre.core.staticenum;
 
 import net.minecraft.util.StatCollector;
+
+import com.MCTBL.botengre.core.BotEngRe;
 
 /*
  * Author : MCTBL
@@ -9,7 +11,8 @@ import net.minecraft.util.StatCollector;
 
 public enum BotEngStrings {
 
-    BLOCKSPARKBINDINGPOINT("block.sparkbindingpoint", true);
+    BLOCKSPARKBINDINGPOINT("block.sparkbindingpoint", true),
+    BLOCKMEPOOL("block.mepool", true);
 
     private String unlocalized;
     private boolean needName;

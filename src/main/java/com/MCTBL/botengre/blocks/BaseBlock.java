@@ -4,8 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 
-import com.MCTBL.botengre.core.CreativeTab;
-
 /*
  * Author : MCTBL
  * Time : 2024-10-01 21:53:57
@@ -30,16 +28,7 @@ public abstract class BaseBlock extends BlockContainer {
 
     protected BaseBlock() {
         this(Material.iron);
-    }
-
-    public BaseBlock setHarvestLevel(final int level) {
-        this.setHarvestLevel("pickaxe", level);
-        return this;
-    }
-
-    public BaseBlock addToCreativeTab() {
-        this.setCreativeTab(CreativeTab.instance);
-        return this;
+        this.setHarvestLevel("pickaxe", 1);
     }
 
 }

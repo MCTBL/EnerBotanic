@@ -4,7 +4,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import com.MCTBL.botengre.client.BlockTextureManager;
+import com.MCTBL.botengre.core.staticenum.AllBlocks;
+import com.MCTBL.botengre.core.staticenum.BlockTextureManager;
 import com.MCTBL.botengre.tile.TileSparkBindingPoint;
 
 /*
@@ -13,12 +14,6 @@ import com.MCTBL.botengre.tile.TileSparkBindingPoint;
  */
 
 public class BlockSparkBindingPoint extends BaseBlock {
-
-    public BlockSparkBindingPoint() {
-        super();
-        this.addToCreativeTab()
-            .setHarvestLevel(1);
-    }
 
     @Override
     public IIcon getIcon(int side, int meta) {
