@@ -1,6 +1,8 @@
 package com.MCTBL.botengre.tile;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
@@ -35,11 +37,9 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
 
     private final MachineSource source;
     private static ArrayList<ItemStack> fakePatterns = new ArrayList<>();
-    private boolean delayedUpdate = false;
-    private int delayTickCounter = 0;
     private boolean isCrafting = false;
-    private ICraftingPatternDetails patternDetails = null;
     private int craftingTickCounter = 0;
+    private Queue<ICraftingPatternDetails> craftingPatterns = new LinkedList<>();
 
     public TileMEPool() {
         this.getProxy()
@@ -57,7 +57,8 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
                 .encodedPattern()
                 .maybeStack(1)
                 .orNull();
-            if (recipe.getInput() instanceof ItemStack inputstack) {
+            if (recipe.getInput() instanceof ItemStack inputstack
+                && !ItemStack.areItemStacksEqual(inputstack, recipe.getOutput())) {
                 ItemStack output = recipe.getOutput();
                 PatternHelper.writeBotaniaPattern(recipe.getManaToConsume(), inputstack, output, pattern);
                 fakePatterns.add(pattern);
@@ -67,9 +68,8 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
 
     @Override
     public boolean pushPattern(final ICraftingPatternDetails patternDetails, final InventoryCrafting table) {
-        if (!this.isCrafting) {
-            this.patternDetails = patternDetails;
-            this.isCrafting = true;
+        if (this.craftingPatterns.size() <= 16) {
+            this.craftingPatterns.add(patternDetails);
             return true;
         }
         return false;
@@ -79,72 +79,57 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
         try {
             IStorageGrid storageGrid = this.getProxy()
                 .getStorage();
-            int manaConsume = this.patternDetails.getPattern()
-                .getTagCompound()
-                .getInteger("mana");
-            for (final IGridNode machine : this.getProxy()
-                .getGrid()
-                .getMachines(TileSparkBindingPoint.class)) {
-                DimensionalCoord location = machine.getGridBlock()
-                    .getLocation();
-                if (machine.getWorld()
-                    .getTileEntity(location.x, location.y, location.z) instanceof TileSparkBindingPoint tsbp) {
 
-                    if (tsbp.getCurrentMana() >= manaConsume) {
-                        boolean rejected = false;
-                        for (IAEItemStack output : this.patternDetails.getOutputs()) {
-                            IAEItemStack rejectedResult = storageGrid.getItemInventory()
-                                .injectItems(output, Actionable.SIMULATE, this.source);
-                            if ((rejectedResult != null) && (rejectedResult.getStackSize() > 0)) {
-                                rejected = true;
-                                break;
+            ICraftingPatternDetails pd;
+            while ((pd = this.craftingPatterns.peek()) != null) {
+                int manaConsume = pd.getPattern()
+                    .getTagCompound()
+                    .getInteger("mana");
+                for (final IGridNode machine : this.getProxy()
+                    .getGrid()
+                    .getMachines(TileSparkBindingPoint.class)) {
+                    DimensionalCoord location = machine.getGridBlock()
+                        .getLocation();
+                    if (machine.getWorld()
+                        .getTileEntity(location.x, location.y, location.z) instanceof TileSparkBindingPoint tsbp) {
+
+                        if (tsbp.getCurrentMana() >= manaConsume) {
+                            boolean rejected = false;
+                            for (IAEItemStack output : pd.getOutputs()) {
+                                IAEItemStack rejectedResult = storageGrid.getItemInventory()
+                                    .injectItems(output, Actionable.SIMULATE, this.source);
+                                if ((rejectedResult != null) && (rejectedResult.getStackSize() > 0)) {
+                                    rejected = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (!rejected) {
-                            // Inject into the network
-                            for (IAEItemStack output : this.patternDetails.getOutputs()) {
-                                storageGrid.getItemInventory()
-                                    .injectItems(output, Actionable.MODULATE, this.source);
+                            if (!rejected) {
+                                // Inject into the network
+                                for (IAEItemStack output : pd.getOutputs()) {
+                                    storageGrid.getItemInventory()
+                                        .injectItems(output, Actionable.MODULATE, this.source);
+                                }
                                 tsbp.recieveMana(-manaConsume);
+                                this.craftingPatterns.poll();
                             }
-//                            this.markForDelayedUpdate();
-                            this.isCrafting = false;
-                            this.patternDetails = null;
+                        } else {
+                            return;
                         }
                     }
                 }
+
             }
         } catch (GridAccessException e) {
             // XD
         }
     }
 
-    private void markForDelayedUpdate() {
-        this.delayedUpdate = true;
-    }
-
     @TileEvent(TileEventType.TICK)
     public void onTick() {
-        if (this.isCrafting && ++this.craftingTickCounter >= 10) {
+        if (!this.craftingPatterns.isEmpty() && ++this.craftingTickCounter >= 5) {
             this.craftingTickCounter = 0;
             this.doCrafting();
             this.markForUpdate();
-        }
-
-        // Is there a delayed update queued?
-        if (this.delayedUpdate) {
-            // Increase the counter
-            this.delayTickCounter++;
-
-            // Have 5 ticks elapsed?
-            if (this.delayTickCounter >= 5) {
-                // Mark for an update
-                this.markForUpdate();
-
-                // Reset the trackers
-                this.delayedUpdate = false;
-                this.delayTickCounter = 0;
-            }
         }
     }
 
@@ -185,9 +170,6 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
 
             // Write the outputs
             NBTTagList outTags = new NBTTagList();
-            // for (ItemStack is : output) {
-            // outTags.appendTag(createItemTag(is));
-            // }
             outTags.appendTag(output.writeToNBT(new NBTTagCompound()));
 
             // Write the basics
@@ -205,22 +187,5 @@ public class TileMEPool extends AENetworkTile implements ICraftingProvider {
         static void clearPattern(final ItemStack pattern) {
             pattern.setTagCompound(null);
         }
-
-        // /**
-        // * From itemstack to NBT Compound
-        // *
-        // * @param ItemStack
-        // * @return NBTTagCompound
-        // */
-        // private static NBTBase createItemTag(final ItemStack i) {
-        // final NBTTagCompound c = new NBTTagCompound();
-        //
-        // if (i != null) {
-        // i.writeToNBT(c);
-        // c.setInteger("Count", i.stackSize);
-        // }
-        //
-        // return c;
-        // }
     }
 }
