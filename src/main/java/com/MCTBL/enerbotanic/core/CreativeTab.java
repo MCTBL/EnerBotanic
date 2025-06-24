@@ -1,10 +1,10 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.enerbotanic.core;
+
+import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com.MCTBL.botengre.core.staticenum.AllBlocks;
 
 /*
  * Author : MCTBL
@@ -16,7 +16,7 @@ public final class CreativeTab extends CreativeTabs {
     public static CreativeTab instance = null;
 
     public CreativeTab() {
-        super("botanicergisticsreborn");
+        super("enerbotanic");
     }
 
     static void init() {

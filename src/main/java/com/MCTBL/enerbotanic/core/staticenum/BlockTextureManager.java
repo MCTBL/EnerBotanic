@@ -1,14 +1,13 @@
-package com.MCTBL.botengre.core.staticenum;
+package com.MCTBL.enerbotanic.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.MCTBL.enerbotanic.core.EnerBotanic;
+
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.IIcon;
-
-import com.MCTBL.botengre.core.BotEngRe;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -49,7 +48,7 @@ public enum BlockTextureManager {
 
     public void registerTexture(final TextureMap textureMap) {
         if (textureMap.getTextureType() == 0) {
-            String header = BotEngRe.MODID + ":";
+            String header = EnerBotanic.MODID + ":";
 
             for (int i = 0; i < this.textureNames.length; i++) {
                 this.textures[i] = textureMap.registerIcon(header + this.textureNames[i]);

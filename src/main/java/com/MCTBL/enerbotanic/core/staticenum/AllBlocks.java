@@ -1,17 +1,16 @@
-package com.MCTBL.botengre.core.staticenum;
+package com.MCTBL.enerbotanic.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.MCTBL.enerbotanic.blocks.BlockMEPool;
+import com.MCTBL.enerbotanic.blocks.BlockMeAltar;
+import com.MCTBL.enerbotanic.blocks.BlockSparkBindingPoint;
+import com.MCTBL.enerbotanic.core.CreativeTab;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
-
-import com.MCTBL.botengre.blocks.BlockMEPool;
-import com.MCTBL.botengre.blocks.BlockMeAltar;
-import com.MCTBL.botengre.blocks.BlockSparkBindingPoint;
-import com.MCTBL.botengre.core.CreativeTab;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /*
@@ -21,21 +20,21 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllBlocks {
 
-    BLOCKMEALTAR(BotEngStrings.BLOCKMEALTAR, new BlockMeAltar()),
-    BLOCKSPARKBINDINGPOINT(BotEngStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint()),
-    BLOCKMEPOOL(BotEngStrings.BLOCKMEPOOL, new BlockMEPool());
+    BLOCKMEALTAR(EnerBotanicStrings.BLOCKMEALTAR, new BlockMeAltar()),
+    BLOCKSPARKBINDINGPOINT(EnerBotanicStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint()),
+    BLOCKMEPOOL(EnerBotanicStrings.BLOCKMEPOOL, new BlockMEPool());
 
     public static final List<AllBlocks> VALUES = Collections.unmodifiableList(Arrays.asList(AllBlocks.values()));
 
-    private final BotEngStrings unlocalizedName;
+    private final EnerBotanicStrings unlocalizedName;
     private final Block block;
     private final Class<? extends ItemBlock> itemclass;
 
-    AllBlocks(final BotEngStrings unlocalizedName, final Block block) {
+    AllBlocks(final EnerBotanicStrings unlocalizedName, final Block block) {
         this(unlocalizedName, block, ItemBlock.class);
     }
 
-    AllBlocks(final BotEngStrings unlocalizedName, final Block block, final Class<? extends ItemBlock> itemclass) {
+    AllBlocks(final EnerBotanicStrings unlocalizedName, final Block block, final Class<? extends ItemBlock> itemclass) {
         this.block = block;
         this.unlocalizedName = unlocalizedName;
 

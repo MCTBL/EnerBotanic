@@ -6,7 +6,7 @@
 		"description": "Mod for AE and Botania",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
-		"url": "https://github.com/MCTBL/Botanic-Energistics-Reborn",
+		"url": "https://github.com/MCTBL/EnerBotanic",
 		"updateUrl": "",
 		"authorList": ["MCTBL"],
 		"credits": "",

@@ -1,12 +1,12 @@
-package com.MCTBL.botengre.blocks;
+package com.MCTBL.enerbotanic.blocks;
+
+import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.core.staticenum.EnerBotanicStrings;
+import com.MCTBL.enerbotanic.tile.TileMEPool;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
-import com.MCTBL.botengre.core.staticenum.BlockTextureManager;
-import com.MCTBL.botengre.core.staticenum.BotEngStrings;
-import com.MCTBL.botengre.tile.TileMEPool;
 
 /*
  * Author : MCTBL
@@ -26,7 +26,7 @@ public class BlockMEPool extends BaseBlock {
 
     @Override
     public String getUnlocalizedName() {
-        return BotEngStrings.BLOCKMEPOOL.getUnlocalized();
+        return EnerBotanicStrings.BLOCKMEPOOL.getUnlocalized();
     }
 
     @Override

@@ -1,15 +1,15 @@
-package com.MCTBL.botengre.core.staticenum;
+package com.MCTBL.enerbotanic.core.staticenum;
+
+import com.MCTBL.enerbotanic.core.EnerBotanic;
 
 import net.minecraft.util.StatCollector;
-
-import com.MCTBL.botengre.core.BotEngRe;
 
 /*
  * Author : MCTBL
  * Time : 2024-10-02 10:49:14
  */
 
-public enum BotEngStrings {
+public enum EnerBotanicStrings {
 
     BLOCKMEALTAR("block.mealtar", true),
     BLOCKSPARKBINDINGPOINT("block.sparkbindingpoint", true),
@@ -18,8 +18,8 @@ public enum BotEngStrings {
     private String unlocalized;
     private boolean needName;
 
-    private BotEngStrings(final String unloc, final boolean needName) {
-        this.unlocalized = BotEngRe.MODID + "." + unloc;
+    private EnerBotanicStrings(final String unloc, final boolean needName) {
+        this.unlocalized = EnerBotanic.MODID + "." + unloc;
         this.needName = needName;
     }
 

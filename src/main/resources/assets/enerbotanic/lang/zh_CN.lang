@@ -1,0 +1,7 @@
+// Creative Tab
+itemGroup.enerbotanic=植物能源
+
+
+//BLOCK
+enerbotanic.block.sparkbindingpoint.name=火花绑定点
+enerbotanic.block.mepool.name=ME 魔力池

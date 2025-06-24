@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.util;
+package com.MCTBL.enerbotanic.util;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

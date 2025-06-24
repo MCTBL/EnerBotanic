@@ -1,16 +1,15 @@
-package com.MCTBL.botengre.core.staticenum;
+package com.MCTBL.enerbotanic.core.staticenum;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.MCTBL.enerbotanic.core.EnerBotanic;
+import com.MCTBL.enerbotanic.tile.TileMEPool;
+import com.MCTBL.enerbotanic.tile.TileMeAltar;
+import com.MCTBL.enerbotanic.tile.TileSparkBindingPoint;
+
 import net.minecraft.tileentity.TileEntity;
-
-import com.MCTBL.botengre.core.BotEngRe;
-import com.MCTBL.botengre.tile.TileMEPool;
-import com.MCTBL.botengre.tile.TileMeAltar;
-import com.MCTBL.botengre.tile.TileSparkBindingPoint;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /*
@@ -36,7 +35,7 @@ public enum AllTileEntitys {
     }
 
     public String getID() {
-        return BotEngRe.MODID + "." + this.ID;
+        return EnerBotanic.MODID + "." + this.ID;
     }
 
     public void registerTE() {

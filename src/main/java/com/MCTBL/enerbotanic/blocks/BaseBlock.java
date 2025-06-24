@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.blocks;
+package com.MCTBL.enerbotanic.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

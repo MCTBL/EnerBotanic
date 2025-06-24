@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.enerbotanic.core;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,18 +11,18 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 @Mod(
-    modid = BotEngRe.MODID,
-    version = BotEngRe.VERSION,
-    name = "Botanic Energistics Reborn",
+    modid = EnerBotanic.MODID,
+    version = EnerBotanic.VERSION,
+    name = "EnerBotanic",
     acceptedMinecraftVersions = "[1.7.10]",
     dependencies = "required-after:appliedenergistics2;required-after:Botania")
-public class BotEngRe {
+public class EnerBotanic {
 
-    public static final String MODID = "botanicergisticsreborn";
+    public static final String MODID = "enerbotanic";
     public static final String VERSION = "GRADLETOKEN_VERSION";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "com.MCTBL.botengre.core.ClientProxy", serverSide = "com.MCTBL.botengre.core.CommonProxy")
+    @SidedProxy(clientSide = "com.MCTBL.enerbotanic.core.ClientProxy", serverSide = "com.MCTBL.enerbotanic.core.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

@@ -1,4 +1,4 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.enerbotanic.core;
 
 import java.io.File;
 

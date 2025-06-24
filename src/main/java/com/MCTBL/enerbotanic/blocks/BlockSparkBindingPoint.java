@@ -1,12 +1,12 @@
-package com.MCTBL.botengre.blocks;
+package com.MCTBL.enerbotanic.blocks;
+
+import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
+import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.tile.TileSparkBindingPoint;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
-import com.MCTBL.botengre.core.staticenum.AllBlocks;
-import com.MCTBL.botengre.core.staticenum.BlockTextureManager;
-import com.MCTBL.botengre.tile.TileSparkBindingPoint;
 
 /*
  * Author : MCTBL

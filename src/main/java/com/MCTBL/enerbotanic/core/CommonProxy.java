@@ -1,7 +1,7 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.enerbotanic.core;
 
-import com.MCTBL.botengre.core.staticenum.AllBlocks;
-import com.MCTBL.botengre.core.staticenum.AllTileEntitys;
+import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
+import com.MCTBL.enerbotanic.core.staticenum.AllTileEntitys;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;

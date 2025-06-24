@@ -1,9 +1,9 @@
-package com.MCTBL.botengre.core;
+package com.MCTBL.enerbotanic.core;
 
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import com.MCTBL.botengre.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 

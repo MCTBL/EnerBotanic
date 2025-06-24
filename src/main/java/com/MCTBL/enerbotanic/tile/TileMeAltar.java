@@ -1,8 +1,4 @@
-/**
- * @author MCTBL
- * @date 2025-06-23 10:53:14
- */
-package com.MCTBL.botengre.tile;
+package com.MCTBL.enerbotanic.tile;
 
 import net.minecraft.inventory.InventoryCrafting;
 
