@@ -22,7 +22,9 @@ public class EnerBotanic {
     public static final String VERSION = "GRADLETOKEN_VERSION";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "com.MCTBL.enerbotanic.core.ClientProxy", serverSide = "com.MCTBL.enerbotanic.core.CommonProxy")
+    @SidedProxy(
+        clientSide = "com.MCTBL.enerbotanic.core.ClientProxy",
+        serverSide = "com.MCTBL.enerbotanic.core.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

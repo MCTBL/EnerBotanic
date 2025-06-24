@@ -1,12 +1,12 @@
 package com.MCTBL.enerbotanic.blocks;
 
-import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
-import com.MCTBL.enerbotanic.core.staticenum.EnerBotanicStrings;
-import com.MCTBL.enerbotanic.tile.TileMEPool;
-
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
+import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.core.staticenum.EnerBotanicStrings;
+import com.MCTBL.enerbotanic.tile.TileMEPool;
 
 /*
  * Author : MCTBL

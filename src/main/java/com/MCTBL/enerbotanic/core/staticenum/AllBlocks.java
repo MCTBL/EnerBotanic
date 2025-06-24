@@ -4,13 +4,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
+
 import com.MCTBL.enerbotanic.blocks.BlockMEPool;
 import com.MCTBL.enerbotanic.blocks.BlockMeAltar;
 import com.MCTBL.enerbotanic.blocks.BlockSparkBindingPoint;
 import com.MCTBL.enerbotanic.core.CreativeTab;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /*

@@ -1,10 +1,10 @@
 package com.MCTBL.enerbotanic.core;
 
-import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
 
 /*
  * Author : MCTBL

@@ -1,8 +1,8 @@
 package com.MCTBL.enerbotanic.core.staticenum;
 
-import com.MCTBL.enerbotanic.core.EnerBotanic;
-
 import net.minecraft.util.StatCollector;
+
+import com.MCTBL.enerbotanic.core.EnerBotanic;
 
 /*
  * Author : MCTBL

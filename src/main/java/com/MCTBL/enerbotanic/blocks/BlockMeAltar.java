@@ -1,14 +1,14 @@
 package com.MCTBL.enerbotanic.blocks;
 
-import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
-import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
-import com.MCTBL.enerbotanic.tile.TileMeAltar;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+
+import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
+import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.tile.TileMeAltar;
 
 /*
  * Author : MCTBL

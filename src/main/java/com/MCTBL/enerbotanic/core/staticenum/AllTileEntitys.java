@@ -4,12 +4,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import net.minecraft.tileentity.TileEntity;
+
 import com.MCTBL.enerbotanic.core.EnerBotanic;
 import com.MCTBL.enerbotanic.tile.TileMEPool;
 import com.MCTBL.enerbotanic.tile.TileMeAltar;
 import com.MCTBL.enerbotanic.tile.TileSparkBindingPoint;
 
-import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /*
