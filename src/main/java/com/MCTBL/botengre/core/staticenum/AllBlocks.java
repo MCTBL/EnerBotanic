@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 
 import com.MCTBL.botengre.blocks.BlockMEPool;
+import com.MCTBL.botengre.blocks.BlockMeAltar;
 import com.MCTBL.botengre.blocks.BlockSparkBindingPoint;
 import com.MCTBL.botengre.core.CreativeTab;
 
@@ -20,6 +21,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllBlocks {
 
+    BLOCKMEALTAR(BotEngStrings.BLOCKMEALTAR, new BlockMeAltar()),
     BLOCKSPARKBINDINGPOINT(BotEngStrings.BLOCKSPARKBINDINGPOINT, new BlockSparkBindingPoint()),
     BLOCKMEPOOL(BotEngStrings.BLOCKMEPOOL, new BlockMEPool());
 

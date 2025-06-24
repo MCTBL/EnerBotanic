@@ -14,9 +14,6 @@ public class CommonProxy {
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
-
-        BotEngRe.LOG.info(Config.greeting);
-        BotEngRe.LOG.info("I am MyMod at version " + BotEngRe.VERSION);
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)

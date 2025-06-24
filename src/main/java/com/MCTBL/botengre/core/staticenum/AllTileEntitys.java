@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import com.MCTBL.botengre.core.BotEngRe;
 import com.MCTBL.botengre.tile.TileMEPool;
+import com.MCTBL.botengre.tile.TileMeAltar;
 import com.MCTBL.botengre.tile.TileSparkBindingPoint;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -19,6 +20,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum AllTileEntitys {
 
+    TILEMEALTAR("TileMeAltar", TileMeAltar.class),
     TILESPARKBINDINGPOINT("TileSparkBindingPoint", TileSparkBindingPoint.class),
     TILEMEPOOL("TileMEPool", TileMEPool.class);
 

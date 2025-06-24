@@ -11,6 +11,7 @@ import com.MCTBL.botengre.core.BotEngRe;
 
 public enum BotEngStrings {
 
+    BLOCKMEALTAR("block.mealtar", true),
     BLOCKSPARKBINDINGPOINT("block.sparkbindingpoint", true),
     BLOCKMEPOOL("block.mepool", true);
 

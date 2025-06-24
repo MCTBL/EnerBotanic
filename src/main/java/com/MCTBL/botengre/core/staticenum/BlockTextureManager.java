@@ -20,6 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public enum BlockTextureManager {
 
+    BLOCKMEALTAR(new String[] { "blockMeAltarUp", "blockMeAltarSide" }),
     BLOCKSPARKBINDINGPOINT(new String[] { "sparkbindingpoint" }),
     BLOCKMEPOOL(new String[] { "blockmepool1", "blockmepool2" });
 
