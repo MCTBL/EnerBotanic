@@ -1,14 +1,20 @@
 package com.MCTBL.enerbotanic.core;
 
+import javax.annotation.Nonnull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.MCTBL.enerbotanic.core.staticenum.GuiBridge;
+
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(
     modid = EnerBotanic.MODID,
@@ -21,6 +27,10 @@ public class EnerBotanic {
     public static final String MODID = "enerbotanic";
     public static final String VERSION = "GRADLETOKEN_VERSION";
     public static final Logger LOG = LogManager.getLogger(MODID);
+
+    @Nonnull
+    @Instance(value = EnerBotanic.MODID)
+    public static EnerBotanic INSTANCE;
 
     @SidedProxy(
         clientSide = "com.MCTBL.enerbotanic.core.ClientProxy",
@@ -48,6 +58,7 @@ public class EnerBotanic {
     @Mod.EventHandler
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void postInit(FMLPostInitializationEvent event) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, GuiBridge.GUI_HANDLER);
         proxy.postInit(event);
     }
 

@@ -6,8 +6,10 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import com.MCTBL.enerbotanic.core.EnerBotanic;
 import com.MCTBL.enerbotanic.core.staticenum.AllBlocks;
 import com.MCTBL.enerbotanic.core.staticenum.BlockTextureManager;
+import com.MCTBL.enerbotanic.core.staticenum.GuiBridge;
 import com.MCTBL.enerbotanic.tile.TileMeAltar;
 
 /*
@@ -18,10 +20,14 @@ import com.MCTBL.enerbotanic.tile.TileMeAltar;
 public class BlockMeAltar extends BaseBlock {
 
     @Override
-    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX,
-        float subY, float subZ) {
-        // TODO Auto-generated method stub
-        return super.onBlockActivated(worldIn, x, y, z, player, side, subX, subY, subZ);
+    public boolean onBlockActivated(final World world, final int x, final int y, final int z, final EntityPlayer player,
+        final int side, final float subX, final float subY, final float subZ) {
+        final TileEntity te = world.getTileEntity(x, y, z);
+        if (te != null && te instanceof TileMeAltar) {
+            player.openGui(EnerBotanic.INSTANCE, GuiBridge.GUIMEALTAR.ordinal(), player.getEntityWorld(), x, y, z);
+            return true;
+        }
+        return false;
     }
 
     @Override
